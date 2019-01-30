@@ -4,6 +4,9 @@ import * as serviceWorker from './serviceWorker'
 import 'antd/dist/antd.css'
 import App from './containers/app'
 
+// importing global Application styles
+import './global.scss'
+
 // root node to render our application
 const target = document.getElementById('root')
 
