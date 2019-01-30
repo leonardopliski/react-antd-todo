@@ -1,8 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
 import 'antd/dist/antd.css'
 import App from './containers/app'
+
+import { store } from './helpers'
 
 // importing global Application styles
 import './global.scss'
@@ -11,7 +14,9 @@ import './global.scss'
 const target = document.getElementById('root')
 
 render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     target
 )
 

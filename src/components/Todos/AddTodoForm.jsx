@@ -15,11 +15,16 @@ const AddTodoForm = (props) => {
         getFieldDecorator
     } = props.form;
 
+    // form submit handler
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.form.validateFields((err, values) => {
+        props.form.validateFields((err, todo) => {
             if (!err) {
-            console.log('Received values of form: ', values);
+                // resetting form fields
+                props.form.resetFields()
+
+                // submitting our form
+                props.onFormSubmit(todo.name)
             }
         });
     }
@@ -50,6 +55,7 @@ const AddTodoForm = (props) => {
                                     display: 'block' 
                                 }} 
                                 placeholder="What needs to be done?" 
+                                spellCheck={ false }
                             />
                         )}
                     </Form.Item>

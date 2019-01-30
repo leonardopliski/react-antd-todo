@@ -1,0 +1,4 @@
+export const todoConstants = {
+    ADD_TODO_SUCCESS: 'ADD_TODO_SUCCESS',
+    TOGGLE_TODO_SUCCESS: 'TOGGLE_TODO_SUCCESS'
+}

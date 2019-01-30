@@ -11,25 +11,18 @@ const Todos = (props) => {
     return (
         <Row type="flex" justify="center" align="middle" >
             <Col
-                xs={{
-                    span: 24
-                }}
-                sm={{
-                    span: 24
-                }}
-                md={{
-                    span: 21
-                }}
-                lg={{
-                    span: 20
-                }}
-                xl={{
-                    span: 18
-                }}
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 21 }}
+                lg={{ span: 20 }}
+                xl={{ span: 18 }}
             >
-                <AddTodoForm />
+                <AddTodoForm onFormSubmit={props.onFormSubmit}/>
                 <Card title="Todo List" >
-                    <TodoList todos={props.todos} />
+                    <TodoList 
+                        todos={props.todos} 
+                        onTodoToggle={props.onTodoToggle}
+                    />
                 </Card>
             </Col>
         </Row>
