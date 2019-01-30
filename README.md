@@ -1,5 +1,5 @@
 # React Ant Design Todo List
-A simple todo list app built with React, Redux and Ant Design
+A simple todo list app built with React, Redux, SASS and Ant Design
 
 ## Usage
 
@@ -11,7 +11,7 @@ $ git clone https://github.com/leonardopliski/react-antd-todo/
 
 Move to the project dir:
 ```sh
-$ cd react-antd-todo
+$ cd react-antd-todo/
 ```
 
 Install project dependencies:
@@ -40,3 +40,17 @@ or with yarn:
 ```sh
 $ yarn build
 ```
+
+### What I Learned
+- A better JavaScript ES6 syntax ( arrow functions, ternary operators, object destructuring and others! )
+- React ( Presentational and Container Components ) 
+- Redux ( State Management with our action creators, reducers, and store )
+- Ant Design for a better UX & UI with Responsive Web Design
+- SASS ( using node-sass into our application managing styles becomes easy )
+- Yarn ( A fast and asynchronous dependency manager for our projects )
+
+### Contributions
+Your contributions are always welcome!
+
+### License
+This Project is [MIT licensed](./LICENSE) © [Leonardo Pliskieviski](https://www.linkedin.com/in/leonardo-pliskieviski/)
