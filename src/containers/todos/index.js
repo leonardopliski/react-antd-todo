@@ -14,9 +14,12 @@ const TodosContainer = props => {
     // Todo state of completed / uncompleted handler
     const handleTodoToggle = todo => props.toggleTodo(todo)
 
+    const handleTodoRemoval = todo => props.removeTodo(todo)
+
     return <Todos 
                 onFormSubmit = { todo => handleformSubmit(todo) } 
-                onTodoToggle = { id   => handleTodoToggle(id) } 
+                onTodoToggle = { id   => handleTodoToggle(id)   } 
+                onTodoRemoval = { id   => handleTodoRemoval(id)  }
                 todos        = { props.todos } 
             />
 };
@@ -29,7 +32,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     addTodo: todoActions.addTodo,
-    toggleTodo: todoActions.toggleTodo
+    toggleTodo: todoActions.toggleTodo,
+    removeTodo: todoActions.removeTodo
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodosContainer)

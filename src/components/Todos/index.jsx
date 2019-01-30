@@ -20,8 +20,9 @@ const Todos = (props) => {
                 <AddTodoForm onFormSubmit={props.onFormSubmit}/>
                 <Card title="Todo List" >
                     <TodoList 
-                        todos={props.todos} 
-                        onTodoToggle={props.onTodoToggle}
+                        todos={ props.todos } 
+                        onTodoToggle={ props.onTodoToggle }
+                        onTodoRemoval={ props.onTodoRemoval }
                     />
                 </Card>
             </Col>

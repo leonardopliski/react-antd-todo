@@ -3,42 +3,47 @@ import {
     Checkbox,
     Tooltip,
     Tag,
-    Icon
+    Icon,
+    List,
+    Button
 } from 'antd'
 
 const TodoItem = props => {
     const { todo } = props
     
     return (
-        <div>
-            { 
-                todo.completed ? 
-                    <div>
-                        <Tooltip title="Mark as uncompleted">
-                            <Checkbox 
-                                defaultChecked={true} 
-                                onChange={ () => props.onTodoToggle(todo.id) }
-                            >
-                            </Checkbox>
-                        </Tooltip>
-                        <Tag color="green" style={{ marginLeft: 10 }}><Icon type="check" /></Tag> 
-                        <div style={{ display: 'inline-block', textTransform: 'capitalize' }}> <del> { todo.name } </del> </div>
-                    </div>
-                : 
-                    <div>
-                        <Tooltip title="Mark as completed">
-                            <Checkbox 
-                                onChange={ () => props.onTodoToggle(todo.id) }
-                            >
-                            </Checkbox>
-                        </Tooltip>
-                        <Tag color="volcano" style={{ marginLeft: 10 }}> - </Tag> 
-                        <div style={{ display: 'inline-block', textTransform: 'capitalize' }}>
-                            { todo.name }
-                        </div>
-                    </div>
-            }
-        </div>
+        <List.Item 
+            actions={[
+                <Tooltip title="Remove Todo">
+                    <Button type="danger" onClick={ () => props.onTodoRemoval(todo.id) }>
+                        <Icon type="delete" />
+                    </Button>
+                </Tooltip>
+            ]}
+        >
+            <div>
+                <Tooltip title={ todo.completed ? 'Mark as uncompleted' : 'Mark as completed'}>
+                    <Checkbox 
+                        defaultChecked={ todo.completed } 
+                        onChange={ 
+                            () => props.onTodoToggle(todo.id) 
+                        }
+                    >
+                    </Checkbox>
+                </Tooltip>
+                <Tag 
+                    color={ todo.completed ? 'green' : 'volcano' } 
+                    style={{ marginLeft: 10 }}
+                >
+                    { todo.completed ? <Icon type="check" /> : '-' }
+                </Tag> 
+                <div 
+                    style={{ display: 'inline-block', textTransform: 'capitalize' }}
+                > 
+                    { todo.completed ? <del>{ todo.name }</del> : todo.name }
+                </div>
+            </div>
+        </List.Item>
     );
 };
 

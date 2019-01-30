@@ -14,6 +14,10 @@ export default (state = initialState, action) => {
             return {
                 todos: state.todos.map( todo => todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo )
             }
+        case todoConstants.REMOVE_TODO_SUCCESS:
+            return {
+                todos: state.todos.filter( todo => todo.id !== action.payload)
+            }
         default:
             return state
     }

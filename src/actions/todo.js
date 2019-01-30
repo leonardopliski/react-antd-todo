@@ -13,6 +13,11 @@ const toggleTodoSuccess = id => ({
     payload: id
 })
 
+const removeTodoSuccess = id => ({
+    type: todoConstants.REMOVE_TODO_SUCCESS,
+    payload: id
+})
+
 const addTodo = name => addTodoSuccess({
     id: todoIndex++,
     name: name,
@@ -21,7 +26,10 @@ const addTodo = name => addTodoSuccess({
 
 const toggleTodo = id => toggleTodoSuccess(id)
 
+const removeTodo = id => removeTodoSuccess(id)
+
 export const todoActions = {
     addTodo,
-    toggleTodo
+    toggleTodo,
+    removeTodo
 }
