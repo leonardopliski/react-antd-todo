@@ -13,13 +13,13 @@ const toggleTodoSuccess = id => ({
     payload: id
 })
 
-const addTodo = (name) => addTodoSuccess({
+const addTodo = name => addTodoSuccess({
     id: todoIndex++,
     name: name,
     completed: false,
 })
 
-const toggleTodo = (id) => toggleTodoSuccess(id)
+const toggleTodo = id => toggleTodoSuccess(id)
 
 export const todoActions = {
     addTodo,
