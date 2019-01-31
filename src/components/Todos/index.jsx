@@ -17,12 +17,12 @@ const Todos = (props) => {
                 lg={{ span: 20 }}
                 xl={{ span: 18 }}
             >
-                <AddTodoForm onFormSubmit={props.onFormSubmit}/>
-                <Card title="Todo List" >
+                <AddTodoForm onFormSubmit={ props.onFormSubmit }/>
+                <Card title="Todo List">
                     <TodoList 
-                        todos={ props.todos } 
-                        onTodoToggle={ props.onTodoToggle }
-                        onTodoRemoval={ props.onTodoRemoval }
+                        todos         = { props.todos         } 
+                        onTodoToggle  = { props.onTodoToggle  }
+                        onTodoRemoval = { props.onTodoRemoval }
                     />
                 </Card>
             </Col>

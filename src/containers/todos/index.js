@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
 // importing our Todos component
 import Todos from '../../components/Todos'
 
@@ -14,13 +15,14 @@ const TodosContainer = props => {
     // Todo state of completed / uncompleted handler
     const handleTodoToggle = todo => props.toggleTodo(todo)
 
+    // Todo removal handler
     const handleTodoRemoval = todo => props.removeTodo(todo)
 
     return <Todos 
-                onFormSubmit = { todo => handleformSubmit(todo) } 
-                onTodoToggle = { id   => handleTodoToggle(id)   } 
+                onFormSubmit  = { todo => handleformSubmit(todo) } 
+                onTodoToggle  = { id   => handleTodoToggle(id)   } 
                 onTodoRemoval = { id   => handleTodoRemoval(id)  }
-                todos        = { props.todos } 
+                todos         = { props.todos } 
             />
 };
 
