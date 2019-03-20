@@ -7,7 +7,6 @@ import {
     Button,
     Input
 } from 'antd'
-import './styles.scss'
 
 const AddTodoForm = (props) => {
 
@@ -51,9 +50,6 @@ const AddTodoForm = (props) => {
                                         className="icon"
                                     />
                                 } 
-                                style={{ 
-                                    display: 'block' 
-                                }} 
                                 placeholder="What needs to be done?" 
                                 spellCheck={ false }
                             />

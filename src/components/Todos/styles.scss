@@ -6,3 +6,14 @@
         color: 'rgba(0,0,0,.25)'
     }
 }
+
+.todo-item {
+    width: 100%;
+    .todo-tag {
+        margin-left: 10px;
+    }
+    .todo-name {
+        display: inline-block; 
+        text-transform: capitalize;
+    }
+}

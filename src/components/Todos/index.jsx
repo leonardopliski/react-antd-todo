@@ -7,6 +7,8 @@ import {
 import AddTodoForm from './AddTodoForm'
 import TodoList from './TodoList'
 
+import './styles.scss';
+
 const Todos = (props) => {
     return (
         <Row type="flex" justify="center" align="middle" >

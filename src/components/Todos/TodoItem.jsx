@@ -21,7 +21,8 @@ const TodoItem = props => {
                 </Tooltip>
             ]}
         >
-            <div>
+            <div className="todo-item">
+            
                 <Tooltip title={ todo.completed ? 'Mark as uncompleted' : 'Mark as completed'}>
                     <Checkbox 
                         defaultChecked={ todo.completed } 
@@ -31,15 +32,15 @@ const TodoItem = props => {
                     >
                     </Checkbox>
                 </Tooltip>
+
                 <Tag 
                     color={ todo.completed ? 'green' : 'volcano' } 
-                    style={{ marginLeft: 10 }}
+                    className="todo-tag"
                 >
                     { todo.completed ? <Icon type="check" /> : '-' }
                 </Tag> 
-                <div 
-                    style={{ display: 'inline-block', textTransform: 'capitalize' }}
-                > 
+
+                <div className="todo-name"> 
                     { todo.completed ? <del>{ todo.name }</del> : todo.name }
                 </div>
             </div>
