@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Routes from "../../routes";
 
