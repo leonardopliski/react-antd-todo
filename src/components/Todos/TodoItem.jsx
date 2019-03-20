@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     Checkbox,
     Tooltip,
@@ -46,6 +47,12 @@ const TodoItem = props => {
             </div>
         </List.Item>
     );
+};
+
+TodoItem.propTypes = {
+    todo: PropTypes.object.isRequired,
+    onTodoRemoval: PropTypes.func.isRequired,
+    onTodoToggle: PropTypes.func.isRequired
 };
 
 export default TodoItem;
