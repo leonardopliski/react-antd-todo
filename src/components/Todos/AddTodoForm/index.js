@@ -3,19 +3,19 @@ import { Form, Icon, Row, Col, Button, Input } from "antd";
 
 import "./styles.scss";
 
-const AddTodoForm = props => {
-  const { getFieldDecorator } = props.form;
+const AddTodoForm = ({ form, onFormSubmit }) => {
+  const { getFieldDecorator } = form;
 
   // form submit handler
   const handleSubmit = e => {
     e.preventDefault();
-    props.form.validateFields((err, todo) => {
+    form.validateFields((err, todo) => {
       if (!err) {
         // resetting form fields
-        props.form.resetFields();
+        form.resetFields();
 
         // submitting our form
-        props.onFormSubmit(todo.name);
+        onFormSubmit(todo.name);
       }
     });
   };
@@ -56,4 +56,4 @@ const AddTodoForm = props => {
   );
 };
 
-export default Form.create({ name: "add_todo_form" })(AddTodoForm);
+export default Form.create({ name: "AddTodoForm" })(AddTodoForm);

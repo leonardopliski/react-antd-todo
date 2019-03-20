@@ -4,14 +4,12 @@ import { Checkbox, Tooltip, Tag, Icon, List, Button } from "antd";
 
 import "./styles.scss";
 
-const TodoItem = props => {
-  const { todo } = props;
-
+const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
   return (
     <List.Item
       actions={[
         <Tooltip title="Remove Todo">
-          <Button type="danger" onClick={() => props.onTodoRemoval(todo.id)}>
+          <Button type="danger" onClick={() => onTodoRemoval(todo.id)}>
             <Icon type="delete" />
           </Button>
         </Tooltip>
@@ -23,7 +21,7 @@ const TodoItem = props => {
         >
           <Checkbox
             defaultChecked={todo.completed}
-            onChange={() => props.onTodoToggle(todo.id)}
+            onChange={() => onTodoToggle(todo.id)}
           />
         </Tooltip>
 

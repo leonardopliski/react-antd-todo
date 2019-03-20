@@ -2,9 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
-// importing root application container
-import App from "./containers/app";
-
 // importing application global store
 import { store } from "./helpers";
 
@@ -13,6 +10,9 @@ import "antd/dist/antd.css";
 
 // importing global Application styles
 import "./global.scss";
+
+// importing root application container
+import App from "./containers/app";
 
 // root node to render our application
 const target = document.getElementById("root");

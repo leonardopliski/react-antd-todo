@@ -5,17 +5,17 @@ import { List } from "antd";
 
 import TodoItem from "../TodoItem";
 
-const TodoList = props => (
+const TodoList = ({ todos, onTodoRemoval, onTodoToggle }) => (
   <List
     locale={{
       emptyText: "There's nothing to do :("
     }}
-    dataSource={props.todos}
+    dataSource={todos}
     renderItem={todo => (
       <TodoItem
         todo={todo}
-        onTodoToggle={props.onTodoToggle}
-        onTodoRemoval={props.onTodoRemoval}
+        onTodoToggle={onTodoToggle}
+        onTodoRemoval={onTodoRemoval}
       />
     )}
   />
