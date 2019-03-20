@@ -1,5 +1,6 @@
 # React Ant Design Todo List
 A simple todo list app built with React, Redux, SASS and Ant Design
+![Application Sample](https://i.imgur.com/uLBQYeK.png)
 
 ## Usage
 
