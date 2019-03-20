@@ -1,10 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import "antd/dist/antd.css";
+
+// importing root application container
 import App from "./containers/app";
 
+// importing application global store
 import { store } from "./helpers";
+
+// importing defalt ant design styles
+import "antd/dist/antd.css";
 
 // importing global Application styles
 import "./global.scss";
