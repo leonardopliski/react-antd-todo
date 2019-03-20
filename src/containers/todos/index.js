@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Row, Col, Card } from "antd";
@@ -40,6 +41,13 @@ const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
       </Col>
     </Row>
   );
+};
+
+TodosContainer.propTypes = {
+  todos: PropTypes.array.isRequired,
+  addTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+  toggleTodo: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
