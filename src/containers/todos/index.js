@@ -1,21 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Row, Col, Card } from "antd";
+
+// importing todo components
 import AddTodoForm from "../../components/Todos/AddTodoForm";
 import TodoList from "../../components/Todos/TodoList";
 
 // importing our todo's action's
 import { todoActions } from "../../actions";
 
-const TodosContainer = props => {
+const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
   // form submit handler to add a todo
-  const handleformSubmit = todo => props.addTodo(todo);
-
-  // Todo state of completed / uncompleted handler
-  const handleTodoToggle = todo => props.toggleTodo(todo);
+  const handleformSubmit = todo => addTodo(todo);
 
   // Todo removal handler
-  const handleTodoRemoval = todo => props.removeTodo(todo);
+  const handleTodoRemoval = todo => removeTodo(todo);
+
+  // Todo toggle handler
+  const handleTodoToggle = todo => toggleTodo(todo);
 
   return (
     <Row type="flex" justify="center" align="middle">
@@ -29,7 +32,7 @@ const TodosContainer = props => {
         <AddTodoForm onFormSubmit={handleformSubmit} />
         <Card title="Todo List">
           <TodoList
-            todos={props.todos}
+            todos={todos}
             onTodoToggle={handleTodoToggle}
             onTodoRemoval={handleTodoRemoval}
           />
@@ -45,11 +48,15 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = {
-  addTodo: todoActions.addTodo,
-  toggleTodo: todoActions.toggleTodo,
-  removeTodo: todoActions.removeTodo
-};
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addTodo: todoActions.addTodo,
+      removeTodo: todoActions.removeTodo,
+      toggleTodo: todoActions.toggleTodo
+    },
+    dispatch
+  );
 
 export default connect(
   mapStateToProps,

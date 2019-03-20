@@ -31,6 +31,6 @@ const removeTodo = id => removeTodoSuccess(id);
 
 export const todoActions = {
   addTodo,
-  toggleTodo,
-  removeTodo
+  removeTodo,
+  toggleTodo
 };
