@@ -1,6 +1,6 @@
 # React Ant Design Todo List
 ![Application Sample](https://i.imgur.com/kLjNdmb.png)
-A simple todo list app built with React, Redux, SASS and Ant Design
+A simple todo list app built with React, Redux, Redux Persist, SASS and Ant Design
 
 ## Usage
 
@@ -46,6 +46,7 @@ $ yarn build
 - A better JavaScript ES6 syntax ( arrow functions, ternary operators, object destructuring and others! )
 - React ( Presentational and Container Components ) 
 - Redux ( State Management with our action creators, reducers, and store )
+- Redux persist ( A great tool to persist and rehydrate redux store )
 - Ant Design for a better UX & UI with Responsive Web Design
 - SASS ( using node-sass into our application managing styles becomes easy )
 - Yarn ( A fast and asynchronous dependency manager for our projects )
