@@ -1,8 +1,5 @@
 import { todoConstants } from "../constants";
 
-// todo's index
-let todoIndex = 0;
-
 const addTodoSuccess = todo => ({
   type: todoConstants.ADD_TODO_SUCCESS,
   payload: todo
@@ -20,7 +17,7 @@ const removeTodoSuccess = id => ({
 
 const addTodo = name =>
   addTodoSuccess({
-    id: todoIndex++,
+    id: Math.round(Math.random() * 36 ** 12).toString(36),
     name: name,
     completed: false
   });
