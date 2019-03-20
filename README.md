@@ -41,7 +41,7 @@ or with yarn:
 $ yarn build
 ```
 
-### What I Learned
+### Application Principles
 - A better JavaScript ES6 syntax ( arrow functions, ternary operators, object destructuring and others! )
 - React ( Presentational and Container Components ) 
 - Redux ( State Management with our action creators, reducers, and store )
