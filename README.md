@@ -1,5 +1,5 @@
 # React Ant Design Todo List
-![Application Sample](https://i.imgur.com/uLBQYeK.png)
+![Application Sample](https://i.imgur.com/kLjNdmb.png)
 A simple todo list app built with React, Redux, SASS and Ant Design
 
 ## Usage
