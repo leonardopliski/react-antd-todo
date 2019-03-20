@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
     List,
 } from 'antd'
@@ -22,5 +24,11 @@ const TodoList = props => (
         )} 
     /> 
 );
+
+TodoList.propTypes = {
+    todos: PropTypes.array.isRequired,
+    onTodoToggle: PropTypes.func.isRequired,
+    onTodoRemoval: PropTypes.func.isRequired,
+}
 
 export default TodoList;
