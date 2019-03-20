@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-
-// importing our Todos component
-import Todos from "../../components/Todos";
+import { Row, Col, Card } from "antd";
+import AddTodoForm from "../../components/Todos/AddTodoForm";
+import TodoList from "../../components/Todos/TodoList";
 
 // importing our todo's action's
 import { todoActions } from "../../actions";
@@ -18,12 +18,24 @@ const TodosContainer = props => {
   const handleTodoRemoval = todo => props.removeTodo(todo);
 
   return (
-    <Todos
-      onFormSubmit={todo => handleformSubmit(todo)}
-      onTodoToggle={id => handleTodoToggle(id)}
-      onTodoRemoval={id => handleTodoRemoval(id)}
-      todos={props.todos}
-    />
+    <Row type="flex" justify="center" align="middle">
+      <Col
+        xs={{ span: 24 }}
+        sm={{ span: 24 }}
+        md={{ span: 21 }}
+        lg={{ span: 20 }}
+        xl={{ span: 18 }}
+      >
+        <AddTodoForm onFormSubmit={handleformSubmit} />
+        <Card title="Todo List">
+          <TodoList
+            todos={props.todos}
+            onTodoToggle={handleTodoToggle}
+            onTodoRemoval={handleTodoRemoval}
+          />
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
