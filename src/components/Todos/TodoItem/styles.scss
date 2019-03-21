@@ -1,5 +1,9 @@
+.list-item {
+    display: flex; 
+    justify-content: space-between;
+}
+
 .todo-item {
-    width: 100%;
     .todo-tag {
         margin-left: 10px;
     }
