@@ -8,6 +8,9 @@ import { store, persistor } from "./helpers";
 // importing defalt ant design styles
 import "antd/dist/antd.css";
 
+// importing react toastify styles
+import "react-toastify/dist/ReactToastify.css";
+
 // importing global Application styles
 import "./global.scss";
 

@@ -13,7 +13,8 @@
     "react-scripts": "^2.1.8",
     "react-toastify": "^4.5.2",
     "redux": "^4.0.1",
-    "redux-persist": "^5.10.0"
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

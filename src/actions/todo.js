@@ -1,19 +1,31 @@
 import { todoConstants } from "../constants";
+import { toast } from "react-toastify";
 
-const addTodoSuccess = todo => ({
-  type: todoConstants.ADD_TODO_SUCCESS,
-  payload: todo
-});
+const addTodoSuccess = todo => dispatch => {
+  dispatch({
+    type: todoConstants.ADD_TODO_SUCCESS,
+    payload: todo
+  });
 
-const toggleTodoSuccess = id => ({
-  type: todoConstants.TOGGLE_TODO_SUCCESS,
-  payload: id
-});
+  toast.success("Todo added!");
+};
 
-const removeTodoSuccess = id => ({
-  type: todoConstants.REMOVE_TODO_SUCCESS,
-  payload: id
-});
+const toggleTodoSuccess = id => dispatch => {
+  dispatch({
+    type: todoConstants.TOGGLE_TODO_SUCCESS,
+    payload: id
+  });
+
+  toast.info("Todo state updated!");
+};
+
+const removeTodoSuccess = id => dispatch => {
+  dispatch({
+    type: todoConstants.REMOVE_TODO_SUCCESS,
+    payload: id
+  });
+  toast.error("Todo removed!");
+};
 
 const addTodo = name =>
   addTodoSuccess({
