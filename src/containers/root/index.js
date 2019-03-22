@@ -8,7 +8,6 @@ const Root = ({ children }) => (
       position="bottom-left"
       autoClose={2000}
       hideProgressBar={false}
-      newestOnTop
       closeOnClick
       rtl={false}
       pauseOnVisibilityChange
