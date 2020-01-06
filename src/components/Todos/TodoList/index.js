@@ -18,6 +18,7 @@ const TodoList = ({ todos, onTodoRemoval, onTodoToggle }) => (
         onTodoRemoval={onTodoRemoval}
       />
     )}
+    pagination={10}
   />
 );
 

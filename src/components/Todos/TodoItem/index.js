@@ -15,6 +15,7 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
         </Tooltip>
       ]}
       className="list-item"
+      key={todo.id}
     >
       <div className="todo-item">
         <Tooltip

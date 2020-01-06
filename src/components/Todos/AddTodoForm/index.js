@@ -6,15 +6,12 @@ import "./styles.scss";
 const AddTodoForm = ({ form, onFormSubmit }) => {
   const { getFieldDecorator } = form;
 
-  // form submit handler
   const handleSubmit = e => {
     e.preventDefault();
     form.validateFields((err, todo) => {
       if (!err) {
-        // resetting form fields
         form.resetFields();
 
-        // submitting our form
         onFormSubmit(todo.name);
       }
     });
