@@ -2,7 +2,7 @@ import React from "react";
 import { ToastContainer } from "react-toastify";
 
 const Root = ({ children }) => (
-  <div>
+  <>
     {children}
     <ToastContainer
       position="bottom-left"
@@ -14,8 +14,7 @@ const Root = ({ children }) => (
       draggable
       pauseOnHover={false}
     />
-    ;
-  </div>
+  </>
 );
 
 export default Root;
