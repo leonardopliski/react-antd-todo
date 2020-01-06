@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  front-end:
+    build:
+      context: ./
+      dockerfile: ./Docker/Dockerfile
+    command: yarn start
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - target: 3000
+        published: 3000
+    networks:
+      - react-antd-todo-network
+
+networks:
+  react-antd-todo-network:
+    driver: bridge
