@@ -1,50 +1,37 @@
 import React from "react";
-import { Form, Icon, Row, Col, Button, Input } from "antd";
+import { Form, Row, Col, Button, Input } from "antd";
+import { PlusCircleFilled } from "@ant-design/icons";
 
 import "./styles.scss";
 
-const AddTodoForm = ({ form, onFormSubmit }) => {
-  const { getFieldDecorator } = form;
+const AddTodoForm = ({ onFormSubmit }) => {
+  const [form] = Form.useForm();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    form.validateFields((err, todo) => {
-      if (!err) {
-        form.resetFields();
+  const onFinish = ({ name: todoName }) => {
+    onFormSubmit(todoName);
 
-        onFormSubmit(todo.name);
-      }
-    });
+    form.resetFields();
   };
 
   return (
     <Form
-      onSubmit={e => handleSubmit(e)}
+      form={form}
+      onFinish={onFinish}
       layout="horizontal"
       className="todo-form"
     >
       <Row gutter={20}>
         <Col xs={24} sm={24} md={17} lg={19} xl={20}>
-          <Form.Item>
-            {getFieldDecorator("name", {
-              rules: [
-                {
-                  required: true,
-                  message: "Please, type in the todo name."
-                }
-              ]
-            })(
-              <Input
-                prefix={<Icon type="tags" className="icon" />}
-                placeholder="What needs to be done?"
-                spellCheck={false}
-              />
-            )}
+          <Form.Item
+            name={"name"}
+            rules={[{ required: true, message: "This field is required" }]}
+          >
+            <Input placeholder="What needs to be done?" />
           </Form.Item>
         </Col>
         <Col xs={24} sm={24} md={7} lg={5} xl={4}>
           <Button type="primary" htmlType="submit" block>
-            <Icon type="plus-circle" />
+            <PlusCircleFilled />
             Add
           </Button>
         </Col>
@@ -53,4 +40,4 @@ const AddTodoForm = ({ form, onFormSubmit }) => {
   );
 };
 
-export default Form.create({ name: "AddTodoForm" })(AddTodoForm);
+export default AddTodoForm;

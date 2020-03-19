@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Checkbox, Tooltip, Tag, Icon, List, Button } from "antd";
+import { Checkbox, Tooltip, Tag, List, Button } from "antd";
 
 import "./styles.scss";
 
@@ -9,8 +9,12 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
     <List.Item
       actions={[
         <Tooltip title="Remove Todo">
-          <Button type="danger" onClick={() => onTodoRemoval(todo.id)}>
-            <Icon type="delete" />
+          <Button
+            className="remove-todo-button"
+            type="danger"
+            onClick={() => onTodoRemoval(todo.id)}
+          >
+            X
           </Button>
         </Tooltip>
       ]}
@@ -28,12 +32,8 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
         </Tooltip>
 
         <Tag color={todo.completed ? "green" : "volcano"} className="todo-tag">
-          {todo.completed ? <Icon type="check" /> : "-"}
+          {todo.name}
         </Tag>
-
-        <div className="todo-name">
-          {todo.completed ? <del>{todo.name}</del> : todo.name}
-        </div>
       </div>
     </List.Item>
   );

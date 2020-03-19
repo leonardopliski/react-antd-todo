@@ -1,14 +1,15 @@
 .list-item {
   display: flex;
   justify-content: space-between;
-}
 
-.todo-item {
-  .todo-tag {
-    margin-left: 10px;
-  }
-  .todo-name {
-    display: inline-block;
-    text-transform: capitalize;
+  .todo-item {
+    display: flex;
+    align-items: center;
+
+    .todo-tag {
+      margin: 0 10px;
+      white-space: normal !important;
+      max-width: 165px;
+    }
   }
 }
