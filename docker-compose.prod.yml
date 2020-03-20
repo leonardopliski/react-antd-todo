@@ -4,14 +4,10 @@ services:
   front-end:
     build:
       context: ./
-      dockerfile: ./Docker/Dockerfile.dev
-    command: yarn build
-    volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      dockerfile: ./Docker/Prod.Dockerfile
     ports:
-      - target: 3000
-        published: 3000
+      - target: 80
+        published: 80
     networks:
       - react-antd-todo-network
 
