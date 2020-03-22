@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Row, Col, Button, Input } from "antd";
 import { PlusCircleFilled } from "@ant-design/icons";
 
-import "./styles.scss";
+import "./styles.less";
 
 const AddTodoForm = ({ onFormSubmit }) => {
   const [form] = Form.useForm();

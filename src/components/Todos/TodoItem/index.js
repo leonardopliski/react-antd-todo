@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Checkbox, Tooltip, Tag, List, Button } from "antd";
+import { Tooltip, Tag, List, Button } from "antd";
+import { CloseOutlined, CheckOutlined } from "@ant-design/icons";
+import { Switch } from "antd";
 
-import "./styles.scss";
+import "./styles.less";
 
 const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
   return (
@@ -25,13 +27,15 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
         <Tooltip
           title={todo.completed ? "Mark as uncompleted" : "Mark as completed"}
         >
-          <Checkbox
-            defaultChecked={todo.completed}
+          <Switch
+            checkedChildren={<CheckOutlined />}
+            unCheckedChildren={<CloseOutlined />}
             onChange={() => onTodoToggle(todo.id)}
+            defaultChecked={todo.completed}
           />
         </Tooltip>
 
-        <Tag color={todo.completed ? "green" : "volcano"} className="todo-tag">
+        <Tag color={todo.completed ? "cyan" : "red"} className="todo-tag">
           {todo.name}
         </Tag>
       </div>
