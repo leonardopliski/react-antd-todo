@@ -1,5 +1,5 @@
 import { todoConstants } from "../constants";
-import { toast } from "react-toastify";
+import { message } from "antd";
 
 const addTodoSuccess = todo => dispatch => {
   dispatch({
@@ -7,7 +7,7 @@ const addTodoSuccess = todo => dispatch => {
     payload: todo
   });
 
-  toast.success("Todo added!");
+  message.success("Todo added!");
 };
 
 const toggleTodoSuccess = id => dispatch => {
@@ -16,7 +16,7 @@ const toggleTodoSuccess = id => dispatch => {
     payload: id
   });
 
-  toast.info("Todo state updated!");
+  message.info("Todo state updated!");
 };
 
 const removeTodoSuccess = id => dispatch => {
@@ -24,7 +24,7 @@ const removeTodoSuccess = id => dispatch => {
     type: todoConstants.REMOVE_TODO_SUCCESS,
     payload: id
   });
-  toast.error("Todo removed!");
+  message.warn("Todo removed!");
 };
 
 const addTodo = name =>
