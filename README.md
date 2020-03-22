@@ -34,7 +34,7 @@ $ docker-compose up -d
 - Redux ( State Management with our action creators, reducers, and store )
 - Redux persist ( A great tool to persist and rehydrate redux store )
 - Ant Design for a better UX & UI with Responsive Web Design
-- SASS ( using node-sass into our application managing styles becomes easy )
+- LESS ( using less into your application makes style management easy )
 - Yarn ( A fast and asynchronous dependency manager for our projects )
 
 ### Contributions
