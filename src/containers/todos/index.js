@@ -10,7 +10,7 @@ import TodoList from "../../components/Todos/TodoList";
 import { todoActions } from "../../actions";
 
 const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
-  const handleformSubmit = todo => addTodo(todo);
+  const handleFormSubmit = todo => addTodo(todo);
 
   const handleTodoRemoval = todo => removeTodo(todo);
 
@@ -25,7 +25,7 @@ const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
         lg={{ span: 20 }}
         xl={{ span: 18 }}
       >
-        <AddTodoForm onFormSubmit={handleformSubmit} />
+        <AddTodoForm onFormSubmit={handleFormSubmit} />
 
         <Card title="Todo List">
           <TodoList
