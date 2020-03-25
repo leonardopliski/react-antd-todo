@@ -45,6 +45,9 @@ jobs:
       - name: Start local server
         run: yarn start
 
+      - name: Wait for server
+        run: yarn run wait-on http://localhost:3000/react-antd-todo --timeout 120000
+
       - name: Execute tests
         run: yarn test --headless
         env:
