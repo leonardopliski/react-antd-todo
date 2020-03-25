@@ -42,6 +42,9 @@ jobs:
         run: |
           yarn
 
+      - name: Start local server
+        run: yarn start & npx wait-on http://localhost:3000
+
       - name: Execute tests
         run: yarn test --headless
         env:

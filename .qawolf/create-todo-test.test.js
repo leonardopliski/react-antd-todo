@@ -17,7 +17,7 @@ afterAll(async () => {
 });
 
 test("create-todo-test", async () => {
-  await page.goto("https://leonardopliski.github.io/react-antd-todo");
+  await page.goto("http://localhost:3000/react-antd-todo");
   await page.click(selectors["0_what_needs_to_b_input"]);
   await page.type(
     selectors["1_what_needs_to_b_input"],
