@@ -13,9 +13,12 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build
+      - name: Install
         run: |
           yarn
+
+      - name: Build
+        run: |
           yarn build
 
       - name: Deploy 🚀
