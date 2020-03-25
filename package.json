@@ -26,6 +26,8 @@
     "husky": "^4.2.3",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
+    "playwright": "0.11.1-next.1584577781703",
+    "qawolf": "0.12.3",
     "react-app-rewired": "^2.1.5"
   },
   "scripts": {
@@ -33,7 +35,7 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "test": "yarn qawolf test",
     "eject": "react-scripts eject",
     "commit": "git-cz"
   },
