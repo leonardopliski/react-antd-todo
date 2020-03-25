@@ -43,7 +43,7 @@ jobs:
           yarn
 
       - name: Start local server
-        run: yarn start & yarn wait-on http://localhost:3000/react-antd-todo
+        run: yarn start
 
       - name: Execute tests
         run: yarn test --headless
