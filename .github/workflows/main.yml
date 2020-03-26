@@ -43,6 +43,9 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Check build
+        run: echo $(ls build)
+
       - name: Serve
         run: yarn run serve -s build
 
