@@ -3,7 +3,8 @@ name: CI
 on:
   push:
     branches:
-      - "*"
+      - "master"
+      - "staging"
 
 jobs:
   build-and-deploy-to-github-pages:
@@ -61,3 +62,13 @@ jobs:
         with:
           name: qawolf-test-result
           path: ${{ github.workspace }}/artifacts
+
+      - name: Build
+        run: |
+          yarn build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
