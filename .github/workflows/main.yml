@@ -44,7 +44,7 @@ jobs:
         run: yarn build
 
       - name: Serve
-        run: npx serve -s build
+        run: npx serve -l 3000 -s build &
 
       - name: Wait for local server
         run: yarn run wait-on http://localhost:3000 --timeout 600000
