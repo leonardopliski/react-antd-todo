@@ -3,8 +3,7 @@ import { render } from "react-dom";
 
 import { store, persistor } from "./helpers";
 
-import "antd/dist/antd.css";
-import "./global.less";
+import "./assets/styles/base.less";
 
 import App from "./containers/app";
 

@@ -1,3 +1,5 @@
+@import "../../../assets/styles/utils/media-queries.less";
+
 .list-item {
   display: flex;
   justify-content: space-between;
@@ -7,10 +9,26 @@
     align-items: center;
 
     .todo-tag {
-      margin: 0 10px;
+      margin: 10px;
       white-space: normal !important;
       max-width: 130px;
       word-break: break-all;
+    }
+  }
+
+  @media @tablet {
+    .todo-item {
+      .todo-tag {
+        max-width: 500px;
+      }
+    }
+  }
+
+  @media @desktop {
+    .todo-item {
+      .todo-tag {
+        max-width: 600px;
+      }
     }
   }
 }

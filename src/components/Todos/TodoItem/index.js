@@ -10,6 +10,16 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
   return (
     <List.Item
       actions={[
+        <Tooltip
+          title={todo.completed ? "Mark as uncompleted" : "Mark as completed"}
+        >
+          <Switch
+            checkedChildren={<CheckOutlined />}
+            unCheckedChildren={<CloseOutlined />}
+            onChange={() => onTodoToggle(todo.id)}
+            defaultChecked={todo.completed}
+          />
+        </Tooltip>,
         <Tooltip title="Remove Todo">
           <Button
             className="remove-todo-button"
@@ -24,17 +34,6 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
       key={todo.id}
     >
       <div className="todo-item">
-        <Tooltip
-          title={todo.completed ? "Mark as uncompleted" : "Mark as completed"}
-        >
-          <Switch
-            checkedChildren={<CheckOutlined />}
-            unCheckedChildren={<CloseOutlined />}
-            onChange={() => onTodoToggle(todo.id)}
-            defaultChecked={todo.completed}
-          />
-        </Tooltip>
-
         <Tag color={todo.completed ? "cyan" : "red"} className="todo-tag">
           {todo.name}
         </Tag>
