@@ -28,7 +28,6 @@
     "playwright": "0.11.1-next.1584577781703",
     "qawolf": "0.12.3",
     "react-app-rewired": "^2.1.5",
-    "serve": "^11.3.0",
     "wait-on": "^4.0.1"
   },
   "scripts": {
