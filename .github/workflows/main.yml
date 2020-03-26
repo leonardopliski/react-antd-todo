@@ -40,14 +40,11 @@ jobs:
       - name: Install project dependencies
         run: yarn
 
-      - name: Install serve
-        run: yarn global add serve
-
       - name: Build
         run: yarn build
 
       - name: Serve
-        run: serve -s build
+        run: yarn run serve -s build
 
       - name: Wait for local server
         run: yarn run wait-on http://localhost:3000 --timeout 600000
