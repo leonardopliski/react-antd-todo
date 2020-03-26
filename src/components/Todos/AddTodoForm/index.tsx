@@ -3,12 +3,20 @@ import { Form, Row, Col, Button, Input } from 'antd';
 import { PlusCircleFilled } from '@ant-design/icons';
 
 import './styles.less';
+import { Store, AnyAction } from 'redux';
 
-const AddTodoForm = ({ onFormSubmit }) => {
+interface AddTodoFormProps {
+  onFormSubmit: (name: string) => void;
+}
+
+const AddTodoForm: React.FunctionComponent<AddTodoFormProps> = ({
+  onFormSubmit
+}) => {
   const [form] = Form.useForm();
 
-  const onFinish = ({ name: todoName }) => {
-    onFormSubmit(todoName);
+  const onFinish = ({ getState }: Store<any, AnyAction>) => {
+    console.log(getState());
+    // onFormSubmit(todoName);
 
     form.resetFields();
   };

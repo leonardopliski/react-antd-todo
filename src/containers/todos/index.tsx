@@ -17,7 +17,7 @@ const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
   const handleTodoToggle = todo => toggleTodo(todo);
 
   return (
-    <Row type="flex" justify="center" align="middle">
+    <Row justify="center" align="middle">
       <Col
         xs={{ span: 23 }}
         sm={{ span: 23 }}
