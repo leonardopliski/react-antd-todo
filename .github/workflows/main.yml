@@ -43,11 +43,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Check build
-        run: echo $(ls build)
-
       - name: Serve
-        run: yarn run serve -s build
+        run: serve -s build
 
       - name: Wait for local server
         run: yarn run wait-on http://localhost:3000 --timeout 600000
