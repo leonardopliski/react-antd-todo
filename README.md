@@ -1,11 +1,11 @@
 # React Ant Design Todo List
 
 ![Application Sample](https://i.imgur.com/kLjNdmb.png)
-A simple todo list app built with React, Redux, Redux Persist, SASS and Ant Design
+A simple todo list app built with React, Redux, Redux Persist, LESS and Ant Design
 
 ## Demo
 
-[A demo is worth thousand word](https://leonardopliski.github.io/react-antd-todo/#/)
+[A demo is worth a thousand words](https://leonardopliski.github.io/react-antd-todo/#/)
 
 ## Usage
 
