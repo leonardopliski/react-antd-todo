@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Tooltip, Tag, List, Button } from "antd";
-import { CloseOutlined, CheckOutlined } from "@ant-design/icons";
-import { Switch } from "antd";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Tooltip, Tag, List, Button } from 'antd';
+import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
 
-import "./styles.less";
+import './styles.less';
 
 const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
   return (
     <List.Item
       actions={[
         <Tooltip
-          title={todo.completed ? "Mark as uncompleted" : "Mark as completed"}
+          title={todo.completed ? 'Mark as uncompleted' : 'Mark as completed'}
         >
           <Switch
             checkedChildren={<CheckOutlined />}
@@ -34,7 +34,7 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
       key={todo.id}
     >
       <div className="todo-item">
-        <Tag color={todo.completed ? "cyan" : "red"} className="todo-tag">
+        <Tag color={todo.completed ? 'cyan' : 'red'} className="todo-tag">
           {todo.name}
         </Tag>
       </div>

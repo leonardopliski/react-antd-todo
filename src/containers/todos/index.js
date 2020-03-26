@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { Row, Col, Card } from "antd";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Row, Col, Card } from 'antd';
 
-import AddTodoForm from "../../components/Todos/AddTodoForm";
-import TodoList from "../../components/Todos/TodoList";
+import AddTodoForm from '../../components/Todos/AddTodoForm';
+import TodoList from '../../components/Todos/TodoList';
 
-import { todoActions } from "../../actions";
+import { todoActions } from '../../actions';
 
 const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
   const handleFormSubmit = todo => addTodo(todo);

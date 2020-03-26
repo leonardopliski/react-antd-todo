@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { List } from "antd";
+import { List } from 'antd';
 
-import TodoItem from "../TodoItem";
+import TodoItem from '../TodoItem';
 
 const TodoList = ({ todos, onTodoRemoval, onTodoToggle }) => (
   <List

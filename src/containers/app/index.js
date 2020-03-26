@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { HashRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import Routes from "../../routes";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import Routes from '../../routes';
 
 const App = ({ store, storePersistor }) => {
   return (

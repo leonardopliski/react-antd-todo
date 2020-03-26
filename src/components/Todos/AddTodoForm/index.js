@@ -1,8 +1,8 @@
-import React from "react";
-import { Form, Row, Col, Button, Input } from "antd";
-import { PlusCircleFilled } from "@ant-design/icons";
+import React from 'react';
+import { Form, Row, Col, Button, Input } from 'antd';
+import { PlusCircleFilled } from '@ant-design/icons';
 
-import "./styles.less";
+import './styles.less';
 
 const AddTodoForm = ({ onFormSubmit }) => {
   const [form] = Form.useForm();
@@ -23,8 +23,8 @@ const AddTodoForm = ({ onFormSubmit }) => {
       <Row gutter={20}>
         <Col xs={24} sm={24} md={17} lg={19} xl={20}>
           <Form.Item
-            name={"name"}
-            rules={[{ required: true, message: "This field is required" }]}
+            name={'name'}
+            rules={[{ required: true, message: 'This field is required' }]}
           >
             <Input placeholder="What needs to be done?" />
           </Form.Item>

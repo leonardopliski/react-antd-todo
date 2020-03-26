@@ -1,4 +1,4 @@
-import { todoConstants } from "../constants";
+import { todoConstants } from '../constants';
 
 const initialState = {
   todos: []
