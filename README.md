@@ -5,7 +5,7 @@ A simple todo list app built with React, Redux, Redux Persist, LESS and Ant Desi
 
 ## Demo
 
-[A demo is worth a thousand words](https://leonardopliski.github.io/react-antd-todo/#/)
+[A demo is worth a thousand words](https://react-antd-todo.netlify.com/)
 
 ## Usage
 
