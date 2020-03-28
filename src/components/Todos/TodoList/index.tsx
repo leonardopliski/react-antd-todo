@@ -1,11 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { List } from 'antd';
 
-import TodoItem from '../TodoItem';
+import { Todo } from '../../../store/interfaces/todo.interface';
+import { TodoItem } from '../TodoItem';
 
-const TodoList = ({ todos, onTodoRemoval, onTodoToggle }) => (
+interface TodoListProps {
+  todos: Todo[];
+  onTodoRemoval: (todo: Todo) => void;
+  onTodoToggle: (todo: Todo) => void;
+}
+
+export const TodoList: React.StatelessComponent<TodoListProps> = ({
+  todos,
+  onTodoRemoval,
+  onTodoToggle
+}) => (
   <List
     locale={{
       emptyText: "There's nothing to do :("
@@ -24,11 +34,3 @@ const TodoList = ({ todos, onTodoRemoval, onTodoToggle }) => (
     }}
   />
 );
-
-TodoList.propTypes = {
-  todos: PropTypes.array.isRequired,
-  onTodoToggle: PropTypes.func.isRequired,
-  onTodoRemoval: PropTypes.func.isRequired
-};
-
-export default TodoList;

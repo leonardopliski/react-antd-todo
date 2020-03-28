@@ -1,20 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Row, Col, Card } from 'antd';
 
-import AddTodoForm from '../../components/Todos/AddTodoForm';
-import TodoList from '../../components/Todos/TodoList';
+import { Todo } from '../../store/interfaces/todo.interface';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTodo, removeTodo, toggleTodo } from '../../store/actions';
+import { RootState } from '../../store/reducers';
+import { AddTodoForm } from '../../components/Todos/AddTodoForm';
+import { TodoList } from '../../components/Todos/TodoList';
 
-import { todoActions } from '../../actions';
+interface TodosContainerProps {}
 
-const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
-  const handleFormSubmit = todo => addTodo(todo);
+const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
+  const dispatch = useDispatch();
 
-  const handleTodoRemoval = todo => removeTodo(todo);
+  const todos = useSelector((state: RootState) => state.todo.todos);
 
-  const handleTodoToggle = todo => toggleTodo(todo);
+  const handleFormSubmit = (todo: Todo): void => {
+    dispatch(addTodo(todo));
+  };
+
+  const handleRemoveTodo = (todo: Todo): void => {
+    dispatch(removeTodo(todo));
+  };
+
+  const handleTodoToggle = (todo: Todo): void => {
+    dispatch(toggleTodo(todo));
+  };
 
   return (
     <Row justify="center" align="middle">
@@ -30,8 +41,8 @@ const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
         <Card title="Todo List">
           <TodoList
             todos={todos}
+            onTodoRemoval={handleRemoveTodo}
             onTodoToggle={handleTodoToggle}
-            onTodoRemoval={handleTodoRemoval}
           />
         </Card>
       </Col>
@@ -39,27 +50,4 @@ const TodosContainer = ({ todos, addTodo, removeTodo, toggleTodo }) => {
   );
 };
 
-TodosContainer.propTypes = {
-  todos: PropTypes.array.isRequired,
-  addTodo: PropTypes.func.isRequired,
-  removeTodo: PropTypes.func.isRequired,
-  toggleTodo: PropTypes.func.isRequired
-};
-
-const mapStateToProps = state => {
-  return {
-    todos: state.todo.todos
-  };
-};
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      addTodo: todoActions.addTodo,
-      removeTodo: todoActions.removeTodo,
-      toggleTodo: todoActions.toggleTodo
-    },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodosContainer);
+export default TodosContainer;

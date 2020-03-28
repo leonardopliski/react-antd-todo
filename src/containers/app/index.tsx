@@ -1,11 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import Routes from '../../routes';
+import { Routes } from '../../routes';
+import { Store } from 'redux';
+import { Persistor } from 'redux-persist';
 
-const App = ({ store, storePersistor }) => {
+interface AppProps {
+  store: Store;
+  storePersistor: Persistor;
+}
+
+const App: React.StatelessComponent<AppProps> = ({ store, storePersistor }) => {
   return (
     <Provider store={store}>
       <PersistGate loading={<div>Loading...</div>} persistor={storePersistor}>
@@ -15,11 +21,6 @@ const App = ({ store, storePersistor }) => {
       </PersistGate>
     </Provider>
   );
-};
-
-App.propTypes = {
-  store: PropTypes.object.isRequired,
-  storePersistor: PropTypes.object.isRequired
 };
 
 export default App;

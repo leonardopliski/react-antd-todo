@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 import TodosContainer from '../containers/todos';
 
-const routes = () => (
+interface RoutesProps {}
+
+export const Routes: React.StatelessComponent<RoutesProps> = () => (
   <Switch>
     <Route path="/" exact={true} component={TodosContainer} />
   </Switch>
 );
-
-export default routes;

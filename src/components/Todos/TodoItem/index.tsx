@@ -1,12 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Tooltip, Tag, List, Button } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 
 import './styles.less';
+import { Todo } from '../../../store/interfaces/todo.interface';
 
-const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
+interface TodoItemProps {
+  todo: Todo;
+  onTodoRemoval: (todo: Todo) => void;
+  onTodoToggle: (todo: Todo) => void;
+}
+
+export const TodoItem: React.StatelessComponent<TodoItemProps> = ({
+  todo,
+  onTodoRemoval,
+  onTodoToggle
+}) => {
   return (
     <List.Item
       actions={[
@@ -16,7 +26,7 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
           <Switch
             checkedChildren={<CheckOutlined />}
             unCheckedChildren={<CloseOutlined />}
-            onChange={() => onTodoToggle(todo.id)}
+            onChange={() => onTodoToggle(todo)}
             defaultChecked={todo.completed}
           />
         </Tooltip>,
@@ -24,7 +34,7 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
           <Button
             className="remove-todo-button"
             type="danger"
-            onClick={() => onTodoRemoval(todo.id)}
+            onClick={() => onTodoRemoval(todo)}
           >
             X
           </Button>
@@ -41,11 +51,3 @@ const TodoItem = ({ todo, onTodoRemoval, onTodoToggle }) => {
     </List.Item>
   );
 };
-
-TodoItem.propTypes = {
-  todo: PropTypes.object.isRequired,
-  onTodoRemoval: PropTypes.func.isRequired,
-  onTodoToggle: PropTypes.func.isRequired
-};
-
-export default TodoItem;
