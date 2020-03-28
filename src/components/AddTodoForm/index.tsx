@@ -41,7 +41,7 @@ export const AddTodoForm: React.StatelessComponent<AddTodoFormProps> = ({
         <Col xs={24} sm={24} md={7} lg={5} xl={4}>
           <Button type="primary" htmlType="submit" block>
             <PlusCircleFilled />
-            Add
+            Add todo
           </Button>
         </Col>
       </Row>

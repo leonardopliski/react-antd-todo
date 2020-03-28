@@ -12,9 +12,9 @@ import { message } from 'antd';
 interface TodosContainerProps {}
 
 export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
-  const dispatch = useDispatch();
+  const todos: Todo[] = useSelector((state: RootState) => state.todo.todos);
 
-  const todos = useSelector((state: RootState) => state.todo.todos);
+  const dispatch = useDispatch();
 
   const handleFormSubmit = (todo: Todo): void => {
     dispatch(addTodo(todo));
@@ -32,7 +32,7 @@ export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () =
   };
 
   return (
-    <Row justify="center" align="middle">
+    <Row justify="center" align="middle" gutter={[20, 20]}>
       <Col
         xs={{ span: 23 }}
         sm={{ span: 23 }}
@@ -40,8 +40,18 @@ export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () =
         lg={{ span: 20 }}
         xl={{ span: 18 }}
       >
-        <AddTodoForm onFormSubmit={handleFormSubmit} />
+        <Card title="Create a new todo">
+          <AddTodoForm onFormSubmit={handleFormSubmit} />
+        </Card>
+      </Col>
 
+      <Col
+        xs={{ span: 23 }}
+        sm={{ span: 23 }}
+        md={{ span: 21 }}
+        lg={{ span: 20 }}
+        xl={{ span: 18 }}
+      >
         <Card title="Todo List">
           <TodoList
             todos={todos}
