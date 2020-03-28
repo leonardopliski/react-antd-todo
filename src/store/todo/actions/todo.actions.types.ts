@@ -1,5 +1,5 @@
-import { TODO_CONSTANTS } from '../constants';
-import { Todo } from '../models/todo.model';
+import { TODO_CONSTANTS } from 'store/todo/constants';
+import { Todo } from 'store/todo/models/todo.model';
 
 interface AddTodoAction {
   type: typeof TODO_CONSTANTS.ADD_TODO_SUCCESS;

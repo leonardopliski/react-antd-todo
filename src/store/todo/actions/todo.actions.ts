@@ -1,6 +1,6 @@
-import { Todo } from '../models/todo.model';
-import { TodoActionTypes } from './todo.actions.types';
-import { TODO_CONSTANTS } from '../constants';
+import { Todo } from 'store/todo/models/todo.model';
+import { TodoActionTypes } from 'store/todo/actions/todo.actions.types';
+import { TODO_CONSTANTS } from 'store/todo/constants';
 
 export function addTodo(todo: Todo): TodoActionTypes {
   return {

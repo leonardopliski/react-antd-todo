@@ -1,6 +1,6 @@
-import { TODO_CONSTANTS } from '../constants';
-import { Todo } from '../models/todo.model';
-import { TodoActionTypes } from '../actions/todo.actions.types';
+import { TODO_CONSTANTS } from 'store/todo/constants';
+import { Todo } from 'store/todo/models/todo.model';
+import { TodoActionTypes } from 'store/todo/actions/todo.actions.types';
 import { v1 as uuidV1 } from 'uuid';
 
 interface TodoReducerInterface {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { TodosContainer } from '../containers/todos';
+import { TodosContainer } from 'containers/todos';
 
 interface RoutesProps {}
 
