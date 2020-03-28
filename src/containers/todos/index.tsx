@@ -9,6 +9,8 @@ import { AddTodoForm } from 'components/AddTodoForm';
 import { TodoList } from 'components/TodoList';
 import { message } from 'antd';
 
+import './styles.less';
+
 interface TodosContainerProps {}
 
 export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
@@ -32,7 +34,12 @@ export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () =
   };
 
   return (
-    <Row justify="center" align="middle" gutter={[20, 20]}>
+    <Row
+      justify="center"
+      align="middle"
+      gutter={[0, 20]}
+      className="todos-container"
+    >
       <Col
         xs={{ span: 23 }}
         sm={{ span: 23 }}
