@@ -1,10 +1,10 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
 
-import { Todo } from '../../store/interfaces/todo.interface';
+import { Todo } from '../../store/todo/models/todo.model';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeTodo, toggleTodo } from '../../store/actions';
-import { RootState } from '../../store/reducers';
+import { addTodo, removeTodo, toggleTodo } from '../../store/todo/actions';
+import { RootState } from '../../store/todo/reducers';
 import { AddTodoForm } from '../../components/Todos/AddTodoForm';
 import { TodoList } from '../../components/Todos/TodoList';
 import { message } from 'antd';

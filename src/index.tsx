@@ -1,9 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
-
-import { store, persistor } from './helpers';
 
 import './assets/styles/base.less';
+
+import { render } from 'react-dom';
+
+import { store, persistor } from './store/app.store';
 
 import App from './containers/app';
 

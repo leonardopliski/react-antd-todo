@@ -1,24 +1,24 @@
-import { Todo } from '../interfaces/todo.interface';
+import { Todo } from '../models/todo.model';
 import { TodoActionTypes } from './todo.actions.types';
-import { todoConstants } from '../constants';
+import { TODO_CONSTANTS } from '../constants';
 
 export function addTodo(todo: Todo): TodoActionTypes {
   return {
-    type: todoConstants.ADD_TODO_SUCCESS,
+    type: TODO_CONSTANTS.ADD_TODO_SUCCESS,
     payload: todo
   };
 }
 
 export function removeTodo(todo: Todo): TodoActionTypes {
   return {
-    type: todoConstants.REMOVE_TODO_SUCCESS,
+    type: TODO_CONSTANTS.REMOVE_TODO_SUCCESS,
     payload: todo
   };
 }
 
 export function toggleTodo(todo: Todo): TodoActionTypes {
   return {
-    type: todoConstants.TOGGLE_TODO_SUCCESS,
+    type: TODO_CONSTANTS.TOGGLE_TODO_SUCCESS,
     payload: todo
   };
 }

@@ -4,7 +4,7 @@ import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 
 import './styles.less';
-import { Todo } from '../../../store/interfaces/todo.interface';
+import { Todo } from '../../../store/todo/models/todo.model';
 
 interface TodoItemProps {
   todo: Todo;

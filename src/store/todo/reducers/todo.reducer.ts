@@ -1,5 +1,5 @@
-import { todoConstants } from '../constants';
-import { Todo } from '../interfaces/todo.interface';
+import { TODO_CONSTANTS } from '../constants';
+import { Todo } from '../models/todo.model';
 import { TodoActionTypes } from '../actions/todo.actions.types';
 import { v1 as uuidV1 } from 'uuid';
 
@@ -13,7 +13,7 @@ const initialState: TodoReducerInterface = {
 
 export const todoReducer = (state = initialState, action: TodoActionTypes) => {
   switch (action.type) {
-    case todoConstants.ADD_TODO_SUCCESS:
+    case TODO_CONSTANTS.ADD_TODO_SUCCESS:
       return Object.assign({}, state, {
         todos: state.todos.concat({
           ...action.payload,
@@ -23,7 +23,7 @@ export const todoReducer = (state = initialState, action: TodoActionTypes) => {
         })
       });
 
-    case todoConstants.TOGGLE_TODO_SUCCESS:
+    case TODO_CONSTANTS.TOGGLE_TODO_SUCCESS:
       return Object.assign({}, state, {
         todos: state.todos.map((todo: Todo) =>
           todo.id === action.payload.id
@@ -31,7 +31,7 @@ export const todoReducer = (state = initialState, action: TodoActionTypes) => {
             : todo
         )
       });
-    case todoConstants.REMOVE_TODO_SUCCESS:
+    case TODO_CONSTANTS.REMOVE_TODO_SUCCESS:
       return {
         todos: state.todos.filter((todo: Todo) => todo.id !== action.payload.id)
       };
