@@ -3,7 +3,7 @@ import { Form, Row, Col, Button, Input } from 'antd';
 import { PlusCircleFilled } from '@ant-design/icons';
 
 import './styles.less';
-import { Todo } from '../../../store/todo/models/todo.model';
+import { Todo } from '../../store/todo/models/todo.model';
 
 interface AddTodoFormProps {
   onFormSubmit: (todo: Todo) => void;

@@ -6,8 +6,8 @@ import { render } from 'react-dom';
 
 import { store, persistor } from './store/app.store';
 
-import App from './containers/app';
+import { App } from './containers/app';
 
-const target = document.getElementById('root');
+const targetHTMLElement = document.getElementById('root');
 
-render(<App store={store} storePersistor={persistor} />, target);
+render(<App store={store} storePersistor={persistor} />, targetHTMLElement);

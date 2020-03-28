@@ -11,7 +11,10 @@ interface AppProps {
   storePersistor: Persistor;
 }
 
-const App: React.StatelessComponent<AppProps> = ({ store, storePersistor }) => {
+export const App: React.StatelessComponent<AppProps> = ({
+  store,
+  storePersistor
+}) => {
   return (
     <Provider store={store}>
       <PersistGate loading={<div>Loading...</div>} persistor={storePersistor}>
@@ -22,5 +25,3 @@ const App: React.StatelessComponent<AppProps> = ({ store, storePersistor }) => {
     </Provider>
   );
 };
-
-export default App;

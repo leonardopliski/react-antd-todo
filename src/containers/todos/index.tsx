@@ -5,13 +5,13 @@ import { Todo } from '../../store/todo/models/todo.model';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo, removeTodo, toggleTodo } from '../../store/todo/actions';
 import { RootState } from '../../store/todo/reducers';
-import { AddTodoForm } from '../../components/Todos/AddTodoForm';
-import { TodoList } from '../../components/Todos/TodoList';
+import { AddTodoForm } from '../../components/AddTodoForm';
+import { TodoList } from '../../components/TodoList';
 import { message } from 'antd';
 
 interface TodosContainerProps {}
 
-const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
+export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
   const dispatch = useDispatch();
 
   const todos = useSelector((state: RootState) => state.todo.todos);
@@ -53,5 +53,3 @@ const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
     </Row>
   );
 };
-
-export default TodosContainer;

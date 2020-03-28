@@ -2,7 +2,7 @@ import React from 'react';
 
 import { List } from 'antd';
 
-import { Todo } from '../../../store/todo/models/todo.model';
+import { Todo } from '../../store/todo/models/todo.model';
 import { TodoItem } from '../TodoItem';
 
 interface TodoListProps {
