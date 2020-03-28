@@ -7,6 +7,7 @@ import { addTodo, removeTodo, toggleTodo } from '../../store/actions';
 import { RootState } from '../../store/reducers';
 import { AddTodoForm } from '../../components/Todos/AddTodoForm';
 import { TodoList } from '../../components/Todos/TodoList';
+import { message } from 'antd';
 
 interface TodosContainerProps {}
 
@@ -17,14 +18,17 @@ const TodosContainer: React.FunctionComponent<TodosContainerProps> = () => {
 
   const handleFormSubmit = (todo: Todo): void => {
     dispatch(addTodo(todo));
+    message.success('Todo added!');
   };
 
   const handleRemoveTodo = (todo: Todo): void => {
     dispatch(removeTodo(todo));
+    message.warn('Todo removed!');
   };
 
   const handleTodoToggle = (todo: Todo): void => {
     dispatch(toggleTodo(todo));
+    message.info('Todo state updated!');
   };
 
   return (

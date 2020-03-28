@@ -29,7 +29,7 @@ export const TodoList: React.StatelessComponent<TodoListProps> = ({
       />
     )}
     pagination={{
-      position: 'top',
+      position: 'bottom',
       pageSize: 10
     }}
   />
