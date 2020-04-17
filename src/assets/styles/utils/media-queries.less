@@ -1,4 +1,18 @@
-// Author: John-Philip Johansson <https://gist.github.com/seriema/e7605bbcdfc9eaf67ac3>
+// Author: John-Philip Johansson and modified by Leonardo Pliskieviski
+
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+
+@screen-sm-min: @screen-sm;
+@screen-md-min: @screen-md;
+@screen-xs-min: @screen-xs;
+@screen-lg-min: @screen-lg;
+
+@screen-xs-max: (@screen-sm-min - 1);
+@screen-sm-max: (@screen-md-min - 1);
+@screen-md-max: (@screen-lg-min - 1);
 
 @xs-and-up: ~'only screen';
 @xs-only: ~'only screen and (max-width: @{screen-xs-max})';
@@ -8,7 +22,6 @@
 @md-only: ~'only screen and (min-width: @{screen-md-min}) and (max-width: @{screen-md-max})';
 @lg-and-up: ~'only screen and (min-width: @{screen-lg-min})';
 @lg-only: @lg-and-up;
-
 @mobile: @xs-only;
 @tablet: @sm-only;
 @desktop: @md-and-up;
