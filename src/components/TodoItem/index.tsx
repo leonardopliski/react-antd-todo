@@ -1,7 +1,6 @@
 import React from 'react';
-import { Tooltip, Tag, List, Button, Popconfirm } from 'antd';
+import { Tooltip, Tag, List, Button, Popconfirm, Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
-import { Switch } from 'antd';
 
 import './styles.less';
 import { Todo } from 'store/todo/models/todo.model';
@@ -30,18 +29,16 @@ export const TodoItem: React.StatelessComponent<TodoItemProps> = ({
             defaultChecked={todo.completed}
           />
         </Tooltip>,
-        <Tooltip title="Remove Todo">
-          <Popconfirm
-            title="Are you sure you want to delete?"
-            onConfirm={() => {
-              onTodoRemoval(todo);
-            }}
-          >
-            <Button className="remove-todo-button" type="danger">
-              X
-            </Button>
-          </Popconfirm>
-        </Tooltip>,
+        <Popconfirm
+          title="Are you sure you want to delete?"
+          onConfirm={() => {
+            onTodoRemoval(todo);
+          }}
+        >
+          <Button className="remove-todo-button" type="danger">
+            X
+          </Button>
+        </Popconfirm>,
       ]}
       className="list-item"
       key={todo.id}
