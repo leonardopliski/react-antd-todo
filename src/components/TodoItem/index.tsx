@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, Tag, List, Button } from 'antd';
+import { Tooltip, Tag, List, Button, Popconfirm } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 
@@ -15,7 +15,7 @@ interface TodoItemProps {
 export const TodoItem: React.StatelessComponent<TodoItemProps> = ({
   todo,
   onTodoRemoval,
-  onTodoToggle
+  onTodoToggle,
 }) => {
   return (
     <List.Item
@@ -31,14 +31,17 @@ export const TodoItem: React.StatelessComponent<TodoItemProps> = ({
           />
         </Tooltip>,
         <Tooltip title="Remove Todo">
-          <Button
-            className="remove-todo-button"
-            type="danger"
-            onClick={() => onTodoRemoval(todo)}
+          <Popconfirm
+            title="Are you sure you want to delete?"
+            onConfirm={() => {
+              onTodoRemoval(todo);
+            }}
           >
-            X
-          </Button>
-        </Tooltip>
+            <Button className="remove-todo-button" type="danger">
+              X
+            </Button>
+          </Popconfirm>
+        </Tooltip>,
       ]}
       className="list-item"
       key={todo.id}
