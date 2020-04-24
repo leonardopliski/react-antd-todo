@@ -110,7 +110,7 @@ test('create-todo', async () => {
   await page.press(selectors['81_what_needs_to_b_input'], 'Backspace');
   await page.type(
     selectors['82_what_needs_to_b_input'],
-    'Create a blog post about kawolf tests'
+    'Create a blog post about qa wolf tests'
   );
   await page.click(selectors['83_button']);
   await page.click(selectors['84_div']);
