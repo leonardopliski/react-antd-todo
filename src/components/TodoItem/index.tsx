@@ -35,7 +35,7 @@ export const TodoItem: React.StatelessComponent<TodoItemProps> = ({
             onTodoRemoval(todo);
           }}
         >
-          <Button className="remove-todo-button" type="danger">
+          <Button className="remove-todo-button" type="primary" danger>
             X
           </Button>
         </Popconfirm>,
