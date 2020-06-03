@@ -1,4 +1,4 @@
-FROM node:13.5.0-alpine
+FROM node:13.14.0-alpine
 
 LABEL maintainer="Leonardo Pliskieviski <leonardopliski@gmail.com>"
 
