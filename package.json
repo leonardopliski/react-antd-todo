@@ -37,7 +37,7 @@
     "playwright": "1.0.2",
     "qawolf": "1.0.1",
     "react-app-rewired": "2.1.6",
-    "wait-on": "5.0.0"
+    "wait-on": "5.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
