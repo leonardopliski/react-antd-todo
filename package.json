@@ -12,8 +12,6 @@
     "@types/react-dom": "16.9.8",
     "@types/uuid": "8.0.0",
     "antd": "4.3.3",
-    "gh-pages": "3.0.0",
-    "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "7.2.0",
@@ -34,7 +32,6 @@
     "husky": "4.2.5",
     "less": "3.11.3",
     "less-loader": "6.1.0",
-    "playwright": "1.1.1",
     "qawolf": "1.0.1",
     "react-app-rewired": "2.1.6",
     "wait-on": "5.0.1"
@@ -72,6 +69,5 @@
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
-  },
-  "snyk": true
+  }
 }
