@@ -39,9 +39,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install project dependencies
-        run: yarn
-
-      - name: Build
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn build
 
       - name: Serve
