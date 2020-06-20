@@ -1,6 +1,5 @@
 const qawolf = require('qawolf');
 
-let browser;
 let page;
 
 beforeAll(async () => {
@@ -12,7 +11,6 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await qawolf.stopVideos();
-  await browser.close();
 });
 
 test('add-todo', async () => {

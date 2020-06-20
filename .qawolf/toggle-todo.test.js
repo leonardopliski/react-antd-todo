@@ -1,6 +1,5 @@
-const qawolf = require("qawolf");
+const qawolf = require('qawolf');
 
-let browser;
 let page;
 
 beforeAll(async () => {
@@ -12,13 +11,12 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await qawolf.stopVideos();
-  await browser.close();
 });
 
-test("toggle-todo", async () => {
-  await page.goto("http://localhost:3000/#");
-  await page.click("#name");
-  await page.type("#name", "sample todo");
-  await page.click(".ant-btn");
-  await page.click(".ant-switch");
+test('toggle-todo', async () => {
+  await page.goto('http://localhost:3000/#');
+  await page.click('#name');
+  await page.type('#name', 'sample todo');
+  await page.click('.ant-btn');
+  await page.click('.ant-switch');
 });
