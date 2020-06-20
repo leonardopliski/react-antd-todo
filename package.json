@@ -12,7 +12,6 @@
     "@types/react-dom": "16.9.8",
     "@types/uuid": "8.0.0",
     "antd": "4.3.4",
-    "playwright": "1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "7.2.0",
@@ -33,17 +32,13 @@
     "husky": "4.2.5",
     "less": "3.11.3",
     "less-loader": "6.1.1",
-    "qawolf": "1.0.1",
     "react-app-rewired": "2.1.6",
     "wait-on": "5.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
     "build": "react-app-rewired build",
     "wait-for-local-server": "yarn wait-on http://localhost:3000 --timeout 600000",
-    "test": "yarn wait-for-local-server && yarn qawolf test",
     "eject": "react-scripts eject",
     "commit": "git-cz"
   },
