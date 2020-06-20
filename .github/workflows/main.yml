@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - 'master'
-      - 'staging'
 
 jobs:
-  build-and-deploy-to-github-pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Install qawolf test dependencies
@@ -57,9 +56,6 @@ jobs:
 
       - name: Serve
         run: npx serve -l 3000 -s build &
-
-      - name: Wait for local server
-        run: yarn run wait-on http://localhost:3000 --timeout 600000
 
       - name: Execute tests
         run: yarn test --headless
