@@ -30,7 +30,7 @@
     "customize-cra": "1.0.0",
     "cz-conventional-changelog": "3.2.0",
     "husky": "4.2.5",
-    "less": "3.11.3",
+    "less": "3.12.2",
     "less-loader": "6.2.0",
     "react-app-rewired": "2.1.6",
     "wait-on": "5.0.1"
