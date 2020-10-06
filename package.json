@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@types/react-redux": "7.1.9",
-    "@types/react-router-dom": "5.1.5",
+    "@types/react-router-dom": "5.1.6",
     "babel-plugin-import": "1.13.0",
     "customize-cra": "1.0.0",
     "cz-conventional-changelog": "3.2.0",
