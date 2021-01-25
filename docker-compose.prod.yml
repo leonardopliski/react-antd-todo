@@ -4,7 +4,7 @@ services:
   front-end:
     build:
       context: ./
-      dockerfile: ./Docker/Prod.Dockerfile
+      dockerfile: ./docker/Dockerfile
     ports:
       - target: 80
         published: 80

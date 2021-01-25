@@ -4,7 +4,7 @@ services:
   front-end:
     build:
       context: ./
-      dockerfile: ./Docker/Dockerfile
+      dockerfile: ./docker/Dockerfile.dev
     command: yarn start
     volumes:
       - ./:/usr/src/app
