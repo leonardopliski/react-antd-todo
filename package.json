@@ -21,19 +21,19 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@types/faker": "^5.1.5",
+    "@types/faker": "5.1.5",
     "@types/react-redux": "7.1.16",
     "@types/react-router-dom": "5.1.7",
     "babel-plugin-import": "1.13.3",
     "customize-cra": "1.0.0",
     "cz-conventional-changelog": "3.3.0",
-    "faker": "^5.2.0",
+    "faker": "5.2.0",
     "husky": "4.3.8",
     "jest": "26.6.0",
     "less": "4.1.0",
     "less-loader": "7.3.0",
-    "react-app-rewired": "^2.1.8",
-    "ts-jest": "^26.4.4",
+    "react-app-rewired": "2.1.8",
+    "ts-jest": "26.4.4",
     "wait-on": "5.2.1"
   },
   "scripts": {
