@@ -3,20 +3,18 @@ import { Form, Row, Col, Button, Input } from 'antd';
 import { PlusCircleFilled } from '@ant-design/icons';
 
 import './styles.less';
-import { Todo } from 'store/todo/models/todo.model';
+import { ITodo } from 'store/todo/models/todo.model';
 
-interface AddTodoFormProps {
-  onFormSubmit: (todo: Todo) => void;
+interface IAddTodoFormProps {
+  onFormSubmit: (todo: ITodo) => void;
 }
 
-export const AddTodoForm: React.StatelessComponent<AddTodoFormProps> = ({
-  onFormSubmit
-}) => {
+export const AddTodoForm: React.FC<IAddTodoFormProps> = ({ onFormSubmit }) => {
   const [form] = Form.useForm();
 
   const onFinish = () => {
     onFormSubmit({
-      name: form.getFieldValue('name')
+      name: form.getFieldValue('name'),
     });
 
     form.resetFields();

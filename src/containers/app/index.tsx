@@ -6,15 +6,12 @@ import { Routes } from 'routes';
 import { Store } from 'redux';
 import { Persistor } from 'redux-persist';
 
-interface AppProps {
+interface IAppProps {
   store: Store;
   storePersistor: Persistor;
 }
 
-export const App: React.StatelessComponent<AppProps> = ({
-  store,
-  storePersistor
-}) => {
+export const App: React.FC<IAppProps> = ({ store, storePersistor }) => {
   return (
     <Provider store={store}>
       <PersistGate loading={<div>Loading...</div>} persistor={storePersistor}>

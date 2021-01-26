@@ -3,15 +3,15 @@ import { Tooltip, Tag, List, Button, Popconfirm, Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 
 import './styles.less';
-import { Todo } from 'store/todo/models/todo.model';
+import { ITodo } from 'store/todo/models/todo.model';
 
-interface TodoItemProps {
-  todo: Todo;
-  onTodoRemoval: (todo: Todo) => void;
-  onTodoToggle: (todo: Todo) => void;
+interface ITodoItemProps {
+  todo: ITodo;
+  onTodoRemoval: (todo: ITodo) => void;
+  onTodoToggle: (todo: ITodo) => void;
 }
 
-export const TodoItem: React.StatelessComponent<TodoItemProps> = ({
+export const TodoItem: React.FC<ITodoItemProps> = ({
   todo,
   onTodoRemoval,
   onTodoToggle,

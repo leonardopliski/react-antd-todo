@@ -1,22 +1,22 @@
-import { TODO_CONSTANTS } from 'store/todo/constants';
-import { Todo } from 'store/todo/models/todo.model';
+import { TODO_ACTION_TYPES } from 'store/todo/constants';
+import { ITodo } from 'store/todo/models/todo.model';
 
-interface AddTodoAction {
-  type: typeof TODO_CONSTANTS.ADD_TODO_SUCCESS;
-  payload: Todo;
+interface IAddTodoAction {
+  type: typeof TODO_ACTION_TYPES.ADD_TODO_SUCCESS;
+  payload: ITodo;
 }
 
-interface ToggleTodoAction {
-  type: typeof TODO_CONSTANTS.TOGGLE_TODO_SUCCESS;
-  payload: Todo;
+interface IToggleTodoAction {
+  type: typeof TODO_ACTION_TYPES.TOGGLE_TODO_STATUS_SUCCESS;
+  payload: ITodo;
 }
 
-interface RemoveTodoAction {
-  type: typeof TODO_CONSTANTS.REMOVE_TODO_SUCCESS;
-  payload: Todo;
+interface IRemoveTodoAction {
+  type: typeof TODO_ACTION_TYPES.REMOVE_TODO_SUCCESS;
+  payload: ITodo;
 }
 
 export type TodoActionTypes =
-  | AddTodoAction
-  | RemoveTodoAction
-  | ToggleTodoAction;
+  | IAddTodoAction
+  | IRemoveTodoAction
+  | IToggleTodoAction;

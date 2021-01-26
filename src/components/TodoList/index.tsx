@@ -2,26 +2,26 @@ import React from 'react';
 
 import { List } from 'antd';
 
-import { Todo } from 'store/todo/models/todo.model';
+import { ITodo } from 'store/todo/models/todo.model';
 import { TodoItem } from 'components/TodoItem';
 
-interface TodoListProps {
-  todos: Todo[];
-  onTodoRemoval: (todo: Todo) => void;
-  onTodoToggle: (todo: Todo) => void;
+interface ITodoListProps {
+  todos: ITodo[];
+  onTodoRemoval: (todo: ITodo) => void;
+  onTodoToggle: (todo: ITodo) => void;
 }
 
-export const TodoList: React.StatelessComponent<TodoListProps> = ({
+export const TodoList: React.FC<ITodoListProps> = ({
   todos,
   onTodoRemoval,
-  onTodoToggle
+  onTodoToggle,
 }) => (
   <List
     locale={{
-      emptyText: "There's nothing to do :("
+      emptyText: "There's nothing to do :(",
     }}
     dataSource={todos}
-    renderItem={todo => (
+    renderItem={(todo) => (
       <TodoItem
         todo={todo}
         onTodoToggle={onTodoToggle}
@@ -30,7 +30,7 @@ export const TodoList: React.StatelessComponent<TodoListProps> = ({
     )}
     pagination={{
       position: 'bottom',
-      pageSize: 10
+      pageSize: 10,
     }}
   />
 );
