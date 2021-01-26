@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile.dev
-    command: yarn start
+    command: npm run start
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules

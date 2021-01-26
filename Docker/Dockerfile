@@ -6,14 +6,16 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
-RUN yarn --pure-lockfile
+COPY package.json package-lock.json ./
+RUN npm i
 
-COPY . ./
+COPY . .
 
-RUN yarn build
+RUN npm run test
 
-FROM nginx:alpine
+RUN npm run build
+
+FROM nginx:1.18.0-alpine
 
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 

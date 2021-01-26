@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`todo reducer should handle addTodo 1`] = `
+Object {
+  "todos": Array [
+    Object {
+      "completed": true,
+      "id": "440351",
+      "name": "This is a test todo",
+    },
+  ],
+}
+`;
