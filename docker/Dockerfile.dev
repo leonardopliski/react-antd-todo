@@ -7,7 +7,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
-RUN npm i
+RUN npm i --legacy-peer-deps
 
 COPY . .
 
