@@ -30,7 +30,7 @@
     "faker": "5.2.0",
     "husky": "4.3.8",
     "jest": "26.6.0",
-    "less": "4.1.0",
+    "less": "4.2.0",
     "less-loader": "7.3.0",
     "react-app-rewired": "2.1.8",
     "ts-jest": "26.4.4",
