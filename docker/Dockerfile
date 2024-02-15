@@ -15,7 +15,7 @@ RUN npm run test
 
 RUN npm run build
 
-FROM nginx:1.18.0-alpine
+FROM nginx:1.25.4-alpine
 
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 
